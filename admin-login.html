@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin Login</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const form = document.getElementById("adminLoginForm");
+        const btn = document.getElementById("loginBtn");
+
+        // ✅ Fix admin credentials
+        const ADMIN_EMAIL = "ayush@gmail.com";
+        const ADMIN_PASSWORD = "2";
+
+        form.addEventListener("submit", (e) => {
+          e.preventDefault();
+
+          const email = document.getElementById("email").value;
+          const password = document.getElementById("password").value;
+
+          btn.disabled = true;
+          btn.innerText = "Checking...";
+
+          setTimeout(() => {
+            if (email === ADMIN_EMAIL && password === ADMIN_PASSWORD) {
+              alert("Admin login successful ✅");
+              // ✅ Direct navigate after login
+              window.location.href = "admin-dashboard.html";
+            } else {
+              alert("Invalid admin credentials ❌");
+            }
+
+            btn.disabled = false;
+            btn.innerText = "Login";
+          }, 800);
+        });
+      });
+    </script>
+    <style>
+      body {
+        margin: 0;
+        font-family: "Segoe UI", sans-serif;
+        background: linear-gradient(to bottom right, #0f0c29, #302b63, #24243e);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        padding: 1rem;
+      }
+
+      .login-box {
+        width: 90%;
+        max-width: 350px;
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(15px);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        border-radius: 1.5rem;
+        padding: 2rem;
+        color: #fff;
+        text-align: center;
+        box-shadow: 0 0 40px rgba(255, 255, 255, 0.05);
+        animation: fadeIn 0.8s ease;
+      }
+
+      h1 {
+        font-size: 2rem;
+        font-weight: bold;
+        margin-bottom: 1.5rem;
+        color: #c7d2fe;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.5rem;
+      }
+
+      .input-group {
+        position: relative;
+        margin-bottom: 1.5rem;
+      }
+
+      .input-group input {
+        width: 90%;
+        padding: 0.9rem 1rem 0.9rem 2.5rem;
+        border-radius: 0.7rem;
+        border: 1px solid;
+        background: transparent;
+        color: #fff;
+        outline: none;
+        font-size: 1rem;
+      }
+
+      .input-group i {
+        position: absolute;
+        left: 0.8rem;
+        top: 50%;
+        transform: translateY(-50%);
+        color: #f9a8d4;
+      }
+
+      #passwordIcon {
+        color: #c4b5fd;
+      }
+
+      .login-btn {
+        width: 100%;
+        padding: 0.9rem;
+        border: none;
+        border-radius: 0.8rem;
+        font-size: 1rem;
+        font-weight: bold;
+        background: linear-gradient(to right, #6366f1, #9333ea, #ec4899);
+        color: #fff;
+        cursor: pointer;
+        transition: transform 0.2s, box-shadow 0.2s;
+      }
+
+      .login-btn:hover {
+        transform: scale(1.05);
+        box-shadow: 0 0 20px rgba(236, 72, 153, 0.6);
+      }
+
+      .login-btn:disabled {
+        opacity: 0.5;
+        cursor: not-allowed;
+      }
+
+      p {
+        margin-top: 1rem;
+        font-size: 0.85rem;
+        color: #c7d2fe;
+        font-style: italic;
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: scale(0.9);
+        }
+        to {
+          opacity: 1;
+          transform: scale(1);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="login-box">
+      <h1>
+        Admin Login <span style="animation: bounce 1s infinite">🔐</span>
+      </h1>
+
+      <form id="adminLoginForm">
+        <div class="input-group">
+          <i class="fa fa-envelope"></i>
+          <input
+            type="email"
+            id="email"
+            placeholder="Admin Email"
+            required
+            style="border-color: #f9a8d4"
+          />
+        </div>
+
+        <div class="input-group">
+          <i id="passwordIcon" class="fa fa-lock"></i>
+          <input
+            type="password"
+            id="password"
+            placeholder="Password"
+            required
+            style="border-color: #c4b5fd"
+          />
+        </div>
+
+        <button id="loginBtn" class="login-btn" type="submit">Login</button>
+      </form>
+
+      <p>
+        Admin access only <span style="animation: pulse 1.5s infinite">🚫</span>
+      </p>
+    </div>
+  </body>
+</html>
+
