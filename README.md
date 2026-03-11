@@ -1,4 +1,4 @@
-![AttendancePag-Preview](Smart Class.png)
+![AttendancePag-Preview](SmartClass.png)
 # AttendancePag
 🚀 Project Title & Tagline
 =========================
