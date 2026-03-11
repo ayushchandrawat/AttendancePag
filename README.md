@@ -1,4 +1,4 @@
-![AttendancePag-Preview](Project 2k25/public/css/view/Smart Class.png)
+![AttendancePag-Preview](Smart Class.png)
 # AttendancePag
 🚀 Project Title & Tagline
 =========================
