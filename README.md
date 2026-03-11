@@ -1,3 +1,4 @@
+![AttendancePag-Preview](public\css\view.png)
 # AttendancePag
 🚀 Project Title & Tagline
 =========================
